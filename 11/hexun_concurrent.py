@@ -6,7 +6,7 @@ MAX_WORKERS = 20  # 最大线程数
 titles = []
 
 
-def get_html(url: str) ->str:
+def get_html(url: str) ->None:
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'}
         resp = requests.get(url, headers=headers)
@@ -21,7 +21,7 @@ def get_html(url: str) ->str:
             raise
 
 
-def get_many(urls: list) ->int:
+def get_many(urls: list) ->None:
     workers = min(MAX_WORKERS, len(urls))
     with futures.ThreadPoolExecutor(workers) as e:
         todo = {}
