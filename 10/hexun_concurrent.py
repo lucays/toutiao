@@ -1,8 +1,6 @@
 from concurrent import futures
 import requests
 
-MAX_WORKERS = 20  # 最大线程数
-
 
 def get_html(url: str) ->str:
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'}
