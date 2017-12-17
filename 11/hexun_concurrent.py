@@ -30,7 +30,7 @@ def get_many(urls: list) ->int:
             todo[future] = url
         for future in tqdm.tqdm(futures.as_completed(todo), total=len(urls)):
             try:
-                future.result()  # result()是get_html返回的值，这里也就是None
+                res = future.result()  # result()是get_html返回的值，这里也就是None
                 # 如果返回html之类的, 可以通过future.add_done_callback(func, args)回调其他函数进一步处理
             except requests.exceptions.HTTPError as exc:
                 error_msg = 'HTTP {res.status_code} - {res.reason}'
