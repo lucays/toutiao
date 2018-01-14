@@ -7,7 +7,7 @@ import pymysql
 def test_mysql(title: str, speaker: str):
     conn = pymysql.connect(host='localhost',  # 远端数据库的话改成对应地址
                                 user='root',  # 用户
-                                password='huanghai',  # 演示用密码，替换成自己数据库的密码
+                                password='12345678',  # 演示用密码，替换成自己数据库的密码
                                 db='spider',  # 数据库名称
                                 charset='utf8mb4',  # 设置编码
                                 cursorclass=pymysql.cursors.SSCursor)
