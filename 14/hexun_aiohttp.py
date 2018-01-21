@@ -39,10 +39,12 @@ def get_title(future):
 def get_many2(urls):
     # windows上可以用ProactorEventLoop()避免ValueError: too many file descriptors in select()错误
     # loop = asyncio.ProactorEventLoop()
-    # task = [get_html(url) for url in urls]
+    # asyncio.set_event_loop(loop)
+
     loop = asyncio.get_event_loop()
     for url in urls:
         task = asyncio.ensure_future(get_html(url))
+        # task = asyncio.ensure_future(get_html2(url))
         # task.add_done_callback(get_title)
     loop.run_until_complete(task)
 
