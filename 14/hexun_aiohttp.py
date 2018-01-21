@@ -52,7 +52,7 @@ def main():
     urls = [basic_url.format(i) for i in range(10)]
     # get_many(urls)
     get_many2(urls)
-    print(titles[:10])
+    print(len(titles))
 
 
 if __name__ == "__main__":
